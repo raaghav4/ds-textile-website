@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS TEXTILE - Kubera Saree Collections | Elampillai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --royal-purple: #6B2D5C;
+            --gold: #D4AF37;
+            --cream: #FFF8E7;
+            --dark-purple: #4A1F3F;
+            --light-gold: #F4E4B6;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--royal-purple), var(--dark-purple));
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            height: 90vh;
+            background: linear-gradient(rgba(107, 45, 92, 0.7), rgba(74, 31, 63, 0.7)), 
+                        url('images/Royal_Mayuri/royal_mayuri_purple.jpeg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-purple);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Highlights */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 5%;
+            background: white;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--cream), white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 2px solid var(--light-gold);
+        }
+
+        .highlight-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-box h3 {
+            color: var(--royal-purple);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Collections Section */
+        .collections {
+            padding: 4rem 5%;
+            background: var(--cream);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--royal-purple);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--gold);
+            margin: 1rem auto;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .collection-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            animation: fadeIn 1s ease;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(107, 45, 92, 0.3);
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .collection-info {
+            padding: 1.5rem;
+        }
+
+        .collection-info h3 {
+            color: var(--royal-purple);
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+        }
+
+        .collection-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .color-count {
+            display: inline-block;
+            background: var(--light-gold);
+            color: var(--dark-purple);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .view-colors-btn {
+            display: inline-block;
+            background: var(--royal-purple);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .view-colors-btn:hover {
+            background: var(--dark-purple);
+            transform: scale(1.05);
+        }
+
+        /* Modal/Popup Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--cream);
+            margin: 3% auto;
+            padding: 2rem;
+            max-width: 1400px;
+            border-radius: 20px;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: var(--royal-purple);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            color: var(--gold);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-right: 3rem;
+        }
+
+        .modal-header h2 {
+            color: var(--royal-purple);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .color-variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .variant-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .variant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(107, 45, 92, 0.3);
+        }
+
+        .variant-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .variant-info {
+            padding: 1.2rem;
+        }
+
+        .variant-info h4 {
+            color: var(--royal-purple);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-transform: capitalize;
+        }
+
+        .order-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-purple);
+            padding: 0.6rem 1.3rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .order-button:hover {
+            background: var(--royal-purple);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 5%;
+            background: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            color: var(--royal-purple);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .about-content p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 5%;
+            background: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(107, 45, 92, 0.9));
+            padding: 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: var(--royal-purple);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--royal-purple);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-form {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--royal-purple);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light-gold);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background: var(--royal-purple);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background: var(--dark-purple);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-purple), var(--royal-purple));
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                height: calc(100vh - 70px);
+                width: 100%;
+                background: var(--royal-purple);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.3s;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .color-variants-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">DS TEXTILE</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#collections" onclick="closeMenu()">Collections</a></li>
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover the Beauty of Kubera Sarees 💫</h1>
+            <p>Elegance Woven with Tradition</p>
+            <p style="font-size: 1.1rem;">Exclusive Collections from DS TEXTILE – Elampillai</p>
+            <a href="https://wa.me/916379207653" class="cta-button">Shop Now on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights">
+        <div class="highlight-box">
+            <h3>💎 100% Quality Guaranteed</h3>
+            <p>Premium fabrics and authentic designs</p>
+        </div>
+        <div class="highlight-box">
+            <h3>🧵 Latest Kubera Designs</h3>
+            <p>Trending collections updated regularly</p>
+        </div>
+        <div class="highlight-box">
+            <h3>🏭 Direct from Elampillai</h3>
+            <p>Factory-fresh sarees at best prices</p>
+        </div>
+        <div class="highlight-box">
+            <h3>☎️ Free WhatsApp Support</h3>
+            <p>Order assistance available anytime</p>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <h2 class="section-title">Our Kubera Saree Collections</h2>
+        <div class="collection-grid">
+            <!-- Classic Elegance -->
+            <div class="collection-card" onclick="openModal('classic-elegance')">
+                <img src="images/Classic_Elegance/classic_elegance_cream.jpeg" alt="Classic Elegance Collection">
+                <div class="collection-info">
+                    <h3>Classic Elegance</h3>
+                    <div class="color-count">🎨 13 Beautiful Colors Available</div>
+                    <p>Timeless designs with intricate patterns and premium fabric. Perfect for traditional celebrations and special occasions.</p>
+                    <button class="view-colors-btn">View All Colors →</button>
+                </div>
+            </div>
+
+            <!-- Kubera Heritage -->
+            <div class="collection-card" onclick="openModal('kubera-heritage')">
+                <img src="images/Kubera_heritage/kubera_heritage_brown.jpeg" alt="Kubera Heritage Collection">
+                <div class="collection-info">
+                    <h3>Kubera Heritage</h3>
+                    <div class="color-count">🎨 32 Stunning Colors Available</div>
+                    <p>Luxurious zari work with traditional Kubera designs. A masterpiece for grand celebrations and ceremonies.</p>
+                    <button class="view-colors-btn">View All Colors →</button>
+                </div>
+            </div>
+
+            <!-- Peacock Grace -->
+            <div class="collection-card" onclick="openModal('peacock-grace')">
+                <img src="images/Peacock_Grace/peacock_grace_blue.jpeg" alt="Peacock Grace Collection">
+                <div class="collection-info">
+                    <h3>Peacock Grace</h3>
+                    <div class="color-count">🎨 11 Gorgeous Colors Available</div>
+                    <p>Beautiful peacock motifs with rich zari work. A stunning choice for bridal and festive wear.</p>
+                    <button class="view-colors-btn">View All Colors →</button>
+                </div>
+            </div>
+
+            <!-- Royal Mayuri -->
+            <div class="collection-card" onclick="openModal('royal-mayuri')">
+                <img src="images/Royal_Mayuri/royal_mayuri_blue.jpeg" alt="Royal Mayuri Collection">
+                <div class="collection-info">
+                    <h3>Royal Mayuri</h3>
+                    <div class="color-count">🎨 24 Vibrant Colors Available</div>
+                    <p>Regal designs with intricate mayuri patterns and premium silk. A royal choice for grand celebrations.</p>
+                    <button class="view-colors-btn">View All Colors →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classic Elegance Modal -->
+    <div id="classic-elegance-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('classic-elegance')">&times;</span>
+            <div class="modal-header">
+                <h2>Classic Elegance Collection</h2>
+                <p>Available in 13 Beautiful Colors</p>
+            </div>
+            <div class="color-variants-grid" id="classic-elegance-grid"></div>
+        </div>
+    </div>
+
+    <!-- Kubera Heritage Modal -->
+    <div id="kubera-heritage-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('kubera-heritage')">&times;</span>
+            <div class="modal-header">
+                <h2>Kubera Heritage Collection</h2>
+                <p>Available in 32 Stunning Colors</p>
+            </div>
+            <div class="color-variants-grid" id="kubera-heritage-grid"></div>
+        </div>
+    </div>
+
+    <!-- Peacock Grace Modal -->
+    <div id="peacock-grace-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('peacock-grace')">&times;</span>
+            <div class="modal-header">
+                <h2>Peacock Grace Collection</h2>
+                <p>Available in 11 Gorgeous Colors</p>
+            </div>
+            <div class="color-variants-grid" id="peacock-grace-grid"></div>
+        </div>
+    </div>
+
+    <!-- Royal Mayuri Modal -->
+    <div id="royal-mayuri-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('royal-mayuri')">&times;</span>
+            <div class="modal-header">
+                <h2>Royal Mayuri Collection</h2>
+                <p>Available in 24 Vibrant Colors</p>
+            </div>
+            <div class="color-variants-grid" id="royal-mayuri-grid"></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>About DS TEXTILE</h2>
+            <p>Welcome to DS TEXTILE, your trusted destination for beautiful Kubera Sarees straight from Elampillai. We blend traditional craftsmanship with elegant design to make every woman feel graceful and confident.</p>
+            <p style="margin-top: 1rem;">With years of experience in the textile industry, we take pride in offering authentic, high-quality sarees that celebrate Indian heritage while embracing contemporary style. Each piece in our collection is carefully selected to ensure you receive nothing but the best.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1622983342885-ba019f93b31b?w=800" alt="Traditional Saree Weaving">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <div>
+                        <strong>WhatsApp:</strong><br>
+                        <a href="https://wa.me/916379207653">+91 6379207653</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>📸</span>
+                    <div>
+                        <strong>Instagram:</strong><br>
+                        <a href="https://www.instagram.com/ds_textile_elampillai" target="_blank">@ds_textile_elampillai</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <div>
+                        <strong>Location:</strong><br>
+                        Elampillai, Tamil Nadu
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>🕐</span>
+                    <div>
+                        <strong>Business Hours:</strong><br>
+                        9:00 AM – 9:00 PM (Daily)
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" required placeholder="Your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">DS TEXTILE – Kubera Saree Collections</p>
+        <p>Elegance Woven with Tradition</p>
+        <p style="margin-top: 1rem;">© 2025 DS TEXTILE | All Rights Reserved</p>
+        <p style="margin-top: 0.5rem;">Made with 💖 from Elampillai</p>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/916379207653" class="whatsapp-float" target="_blank">
+        💬
+    </a>
+
+    <script>
+        // Collection data with all saree variants
+        const collections = {
+            'classic-elegance': {
+                name: 'Classic Elegance',
+                folder: 'Classic_Elegance',
+                variants: [
+                    { file: 'classic_elegance_cream.jpeg', color: 'Cream' },
+                    { file: 'classic_elegance_cream1.jpeg', color: 'Cream Variant' },
+                    { file: 'classic_elegance_gray.jpeg', color: 'Gray' },
+                    { file: 'classic_elegance_gray1.jpeg', color: 'Gray Variant' },
+                    { file: 'classic_elegance_green.jpeg', color: 'Green' },
+                    { file: 'classic_elegance_green1.jpeg', color: 'Green Variant' },
+                    { file: 'classic_elegance_orange.jpeg', color: 'Orange' },
+                    { file: 'classic_elegance_purple.jpeg', color: 'Purple' },
+                    { file: 'classic_elegance_red.jpeg', color: 'Red' },
+                    { file: 'classic_elegance_sandal.jpeg', color: 'Sandal' },
+                    { file: 'classic_elegance_sandal1.jpeg', color: 'Sandal Variant' },
+                    { file: 'classic_elegance_violet.jpeg', color: 'Violet' },
+                    { file: 'classic_elegance_yellow.jpeg', color: 'Yellow' }
+                ]
+            },
+            'kubera-heritage': {
+                name: 'Kubera Heritage',
+                folder: 'Kubera_heritage',
+                variants: [
+                    { file: 'kubera_heritage_brown.jpeg', color: 'Brown' },
+                    { file: 'kubera_heritage_brown2.jpeg', color: 'Brown Variant 2' },
+                    { file: 'kubera_heritage_cream.jpeg', color: 'Cream' },
+                    { file: 'kubera_heritage_cream1.jpeg', color: 'Cream Variant 1' },
+                    { file: 'kubera_heritage_cream2.jpeg', color: 'Cream Variant 2' },
+                    { file: 'kubera_heritage_cream3.jpeg', color: 'Cream Variant 3' },
+                    { file: 'kubera_heritage_cream4.jpeg', color: 'Cream Variant 4' },
+                    { file: 'kubera_heritage_cream5.jpeg', color: 'Cream Variant 5' },
+                    { file: 'kubera_heritage_cream6.jpeg', color: 'Cream Variant 6' },
+                    { file: 'kubera_heritage_green.jpeg', color: 'Green' },
+                    { file: 'kubera_heritage_green1.jpeg', color: 'Green Variant 1' },
+                    { file: 'kubera_heritage_green2.jpeg', color: 'Green Variant 2' },
+                    { file: 'kubera_heritage_green3.jpeg', color: 'Green Variant 3' },
+                    { file: 'kubera_heritage_grey.jpeg', color: 'Grey' },
+                    { file: 'kubera_heritage_grey1.jpeg', color: 'Grey Variant' },
+                    { file: 'kubera_heritage_pink.jpeg', color: 'Pink' },
+                    { file: 'kubera_heritage_pink1.jpeg', color: 'Pink Variant 1' },
+                    { file: 'kubera_heritage_pink2.jpeg', color: 'Pink Variant 2' },
+                    { file: 'kubera_heritage_red.jpeg', color: 'Red' },
+                    { file: 'kubera_heritage_rose.jpeg', color: 'Rose' },
+                    { file: 'kubera_heritage_sandal.jpeg', color: 'Sandal' },
+                    { file: 'kubera_heritage_sandal1.jpeg', color: 'Sandal Variant 1' },
+                    { file: 'kubera_heritage_sandal2.jpeg', color: 'Sandal Variant 2' },
+                    { file: 'kubera_heritage_sandal3.jpeg', color: 'Sandal Variant 3' },
+                    { file: 'kubera_heritage_sandal4.jpeg', color: 'Sandal Variant 4' },
+                    { file: 'kubera_heritage_sandal5.jpeg', color: 'Sandal Variant 5' },
+                    { file: 'kubera_heritage_sandal6.jpeg', color: 'Sandal Variant 6' },
+                    { file: 'kubera_heritage_violet.jpeg', color: 'Violet' },
+                    { file: 'kubera_heritage_yellow.jpeg', color: 'Yellow' },
+                    { file: 'kubera_heritage_yellow1.jpeg', color: 'Yellow Variant 1' },
+                    { file: 'kubera_heritage_yellow2.jpeg', color: 'Yellow Variant 2' },
+                    { file: 'kubera_heritage_yellow3.jpeg', color: 'Yellow Variant 3' }
+                ]
+            },
+            'peacock-grace': {
+                name: 'Peacock Grace',
+                folder: 'Peacock_Grace',
+                variants: [
+                    { file: 'peacock_grace_blue.jpeg', color: 'Blue' },
+                    { file: 'peacock_grace_cream.jpeg', color: 'Cream' },
+                    { file: 'peacock_grace_cream1.jpeg', color: 'Cream Variant 1' },
+                    { file: 'peacock_grace_cream2.jpeg', color: 'Cream Variant 2' },
+                    { file: 'peacock_grace_green.jpeg', color: 'Green' },
+                    { file: 'peacock_grace_orange.jpeg', color: 'Orange' },
+                    { file: 'peacock_grace_pink.jpeg', color: 'Pink' },
+                    { file: 'peacock_grace_pink2.jpeg', color: 'Pink Variant' },
+                    { file: 'peacock_grace_yellow.jpeg', color: 'Yellow' },
+                    { file: 'peacock_grace_yellow1.jpeg', color: 'Yellow Variant 1' },
+                    { file: 'peacock_grace_yellow2.jpeg', color: 'Yellow Variant 2' }
+                ]
+            },
+            'royal-mayuri': {
+                name: 'Royal Mayuri',
+                folder: 'Royal_Mayuri',
+                variants: [
+                    { file: 'royal_mayuri_blue.jpeg', color: 'Blue' },
+                    { file: 'royal_mayuri_blue1.jpeg', color: 'Blue Variant 1' },
+                    { file: 'royal_mayuri_blue2.jpeg', color: 'Blue Variant 2' },
+                    { file: 'royal_mayuri_cream.jpeg', color: 'Cream' },
+                    { file: 'royal_mayuri_green.jpeg', color: 'Green' },
+                    { file: 'royal_mayuri_green1.jpeg', color: 'Green Variant 1' },
+                    { file: 'royal_mayuri_green2.jpeg', color: 'Green Variant 2' },
+                    { file: 'royal_mayuri_green3.jpeg', color: 'Green Variant 3' },
+                    { file: 'royal_mayuri_green4.jpeg', color: 'Green Variant 4' },
+                    { file: 'royal_mayuri_green5.jpeg', color: 'Green Variant 5' },
+                    { file: 'royal_mayuri_green6.jpeg', color: 'Green Variant 6' },
+                    { file: 'royal_mayuri_green7.jpeg', color: 'Green Variant 7' },
+                    { file: 'royal_mayuri_orange.jpeg', color: 'Orange' },
+                    { file: 'royal_mayuri_pink.jpeg', color: 'Pink' },
+                    { file: 'royal_mayuri_pink1.jpeg', color: 'Pink Variant 1' },
+                    { file: 'royal_mayuri_purple.jpeg', color: 'Purple' },
+                    { file: 'royal_mayuri_red.jpeg', color: 'Red' },
+                    { file: 'royal_mayuri_red1.jpeg', color: 'Red Variant' },
+                    { file: 'royal_mayuri_rose.jpeg', color: 'Rose' },
+                    { file: 'royal_mayuri_sandal.jpeg', color: 'Sandal' },
+                    { file: 'royal_mayuri_sandal1.jpeg', color: 'Sandal Variant' },
+                    { file: 'royal_mayuri_yellow.jpeg', color: 'Yellow' },
+                    { file: 'royal_mayuri_yellow1.jpeg', color: 'Yellow Variant 1' },
+                    { file: 'royal_mayuri_yellow2.jpeg', color: 'Yellow Variant 2' }
+                ]
+            }
+        };
+
+        // Populate modal with saree variants
+        function populateModal(collectionId) {
+            const collection = collections[collectionId];
+            const grid = document.getElementById(collectionId + '-grid');
+            
+            grid.innerHTML = '';
+            
+            collection.variants.forEach(variant => {
+                const imagePath = `images/${collection.folder}/${variant.file}`;
+                const colorName = variant.color;
+                const collectionName = collection.name;
+                
+                const card = document.createElement('div');
+                card.className = 'variant-card';
+                card.innerHTML = `
+                    <img src="${imagePath}" alt="${collectionName} - ${colorName}" onerror="this.src='https://via.placeholder.com/350x450?text=Image+Not+Found'">
+                    <div class="variant-info">
+                        <h4>${collectionName} - ${colorName}</h4>
+                        <a href="https://wa.me/916379207653?text=I'm interested in ${collectionName} - ${colorName} saree" class="order-button">Order on WhatsApp</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Initialize all modals
+        Object.keys(collections).forEach(collectionId => {
+            populateModal(collectionId);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        // Modal functions
+        function openModal(collectionName) {
+            const modal = document.getElementById(collectionName + '-modal');
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(collectionName) {
+            const modal = document.getElementById(collectionName + '-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            const name = e.target[0].value;
+            const phone = e.target[1].value;
+            const message = e.target[2].value;
+            const whatsappMessage = `Hello! I'm ${name}. ${message}. My phone: ${phone}`;
+            window.open(`https://wa.me/916379207653?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+            e.target.reset();
+        }
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.collection-card, .highlight-box, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
